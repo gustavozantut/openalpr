@@ -35,9 +35,9 @@ def process_image(
         .replace(".", "")
         .replace("-", "")
     )
+    cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / id}.log"
     with sent_plates_log_file.open("a") as f:
         f.write(id + "\n")
-    cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / id}.log"
     subprocess.run(["sh", "-c", cmd])
     shutil.move(image_path, sent_plates_file_dir / (id + ".jpg"))
     # logging.info(f"Processed {image_path.name} for category {category} with ID {id}")
