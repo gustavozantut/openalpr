@@ -1,6 +1,5 @@
 import subprocess
 import shutil
-import logging
 from pathlib import Path
 from datetime import datetime
 import time
@@ -40,7 +39,6 @@ def process_image(
         f.write(id + "\n")
     subprocess.run(["sh", "-c", cmd])
     shutil.move(image_path, sent_plates_file_dir / (id + ".jpg"))
-    # logging.info(f"Processed {image_path.name} for category {category} with ID {id}")
 
 
 def main():
