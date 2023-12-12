@@ -27,13 +27,7 @@ def process_image(
     processed_plates_log_dir: Path,
     flags: str,
 ):
-    id = (
-        str(datetime.now())
-        .replace(" ", "")
-        .replace(":", "")
-        .replace(".", "")
-        .replace("-", "")
-    )
+    id = image_path.name
     cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / id}.log"
     with sent_plates_log_file.open("a") as f:
         f.write(id + "\n")
