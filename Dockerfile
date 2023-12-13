@@ -1,7 +1,7 @@
-FROM python:slim
+FROM python:3.11.3-slim
 
 # Install prerequisites
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential \
     cmake \
     curl \
@@ -12,6 +12,18 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libopencv-dev \
     libtesseract-dev \
     wget
+
+# Install prerequisites
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y cmake 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y curl 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y git 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y libcurl3-dev 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y libleptonica-dev 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y liblog4cplus-dev 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y libopencv-dev 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y libtesseract-dev 
+RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
 # Copy all data
 COPY . /srv/openalpr

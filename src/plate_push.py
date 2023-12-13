@@ -8,6 +8,6 @@ beanstalk.watch('alpr')
 
 job = beanstalk.reserve()
 
-print job.body
+print(job.body)
 
 job.delete()

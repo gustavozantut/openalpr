@@ -29,6 +29,10 @@ def process_image(
 ):
     id = image_path.name
     cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / id}.log"
+    # Read the current count from the sent_plates_log_file
+    with sent_plates_log_file.open("r") as f:
+        count = len(f.readlines()) + 1
+    id = f"{id}_{count}.jpg" if count > 1 else f'{id}.jpg'
     with sent_plates_log_file.open("a") as f:
         f.write(id + "\n")
     subprocess.run(["sh", "-c", cmd])
