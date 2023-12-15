@@ -27,18 +27,12 @@ def process_image(
     processed_plates_log_dir: Path,
     flags: str,
 ):
-    id = (
-        str(datetime.now())
-        .replace(" ", "")
-        .replace(":", "")
-        .replace(".", "")
-        .replace("-", "")
-    )
-    cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / id}.log"
+    filename = Path(image_path).stem
+    cmd = f"alpr {flags} {image_path} >> {processed_plates_log_dir / filename}.log"
     with sent_plates_log_file.open("a") as f:
-        f.write(id + "\n")
+        f.write(filename + "\n")
     subprocess.run(["sh", "-c", cmd])
-    shutil.move(image_path, sent_plates_file_dir / (id + ".jpg"))
+    shutil.move(image_path, sent_plates_file_dir / (filename + ".jpg"))
 
 
 def main():
