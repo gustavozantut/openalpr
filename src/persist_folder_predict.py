@@ -117,7 +117,7 @@ def main():
             continue
 
         for category, file_list in files_cat_dict.items():
-            for file in file_list:
+            for file in sorted(file_list):
                 process_image(
                     file,
                     sent_plates_file_dir_dict[category],
