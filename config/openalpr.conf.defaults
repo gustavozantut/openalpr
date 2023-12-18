@@ -62,9 +62,9 @@ analysis_count = 5
 ; would classify  ALL images as high-contrast, setting it to 1.0 would classify no images as high-contrast. 
 contrast_detection_threshold = 0.3
 
-max_plate_angle_degrees = 50
+max_plate_angle_degrees = 30
 
-ocr_min_font_point = 1
+ocr_min_font_point = 2
 
 ; Minimum OCR confidence percent to consider.
 postprocess_min_confidence = 1
