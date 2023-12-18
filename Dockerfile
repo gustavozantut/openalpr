@@ -28,20 +28,20 @@ RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get insta
 # Copy all data
 RUN git clone https://github.com/gustavozantut/openalpr /srv/
 
-WORKDIR /srv/openalpr
+#WORKDIR /srv/openalpr
 
-RUN pip install -r /srv/openalpr/requirements.txt
-RUN rm /srv/openalpr/requirements.txt
+# RUN pip install -r /srv/openalpr/requirements.txt
+# RUN rm /srv/openalpr/requirements.txt
 
-# Setup the build directory
-RUN mkdir /srv/openalpr/src/build
-WORKDIR /srv/openalpr/src/build
+# # Setup the build directory
+# RUN mkdir /srv/openalpr/src/build
+# WORKDIR /srv/openalpr/src/build
 
-# Setup the compile environment
-RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc .. && \
-    make -j2 && \
-    make install
+# # Setup the compile environment
+# RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc .. && \
+#     make -j2 && \
+#     make install
 
-WORKDIR /srv/openalpr/src
+# WORKDIR /srv/openalpr/src
 
-ENTRYPOINT ["python", "persist_folder_predict.py"]
+# ENTRYPOINT ["python", "persist_folder_predict.py"]
