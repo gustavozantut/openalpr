@@ -30,8 +30,8 @@ RUN git clone https://github.com/gustavozantut/openalpr /srv
 
 WORKDIR /srv/openalpr
 
-RUN pip install -r requirements.txt
-RUN rm requirements.txt
+RUN pip install -r ./requirements.txt
+RUN rm ./requirements.txt
 
 # Setup the build directory
 RUN mkdir /srv/openalpr/src/build
