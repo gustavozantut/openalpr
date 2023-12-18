@@ -26,7 +26,7 @@ RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get insta
 RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
 # Copy all data
-COPY . /srv/openalpr
+RUN git clone https://github.com/gustavozantut/openalpr /srv
 
 WORKDIR /srv/openalpr
 
