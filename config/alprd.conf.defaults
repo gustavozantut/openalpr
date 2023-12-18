@@ -17,7 +17,7 @@ pattern = gn
 ;   stream = webcam
 
 ; Number of threads to analyze frames.
-analysis_threads = 15
+analysis_threads = 5
 
 ; topn is the number of possible plate character variations to report
 topn = 5
