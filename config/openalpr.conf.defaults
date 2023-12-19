@@ -60,9 +60,9 @@ analysis_count = 10
 
 ; OpenALPR detects high-contrast plate crops and uses an alternative edge detection technique.  Setting this to 0.0 
 ; would classify  ALL images as high-contrast, setting it to 1.0 would classify no images as high-contrast. 
-contrast_detection_threshold = 0.1
+contrast_detection_threshold = 0.0
 
-max_plate_angle_degrees = 30
+max_plate_angle_degrees = 20
 
 ocr_min_font_point = 1
 
