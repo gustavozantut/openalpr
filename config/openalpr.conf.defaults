@@ -64,7 +64,7 @@ contrast_detection_threshold = 0.8
 
 max_plate_angle_degrees = 30
 
-ocr_min_font_point = 2
+ocr_min_font_point = 1
 
 ; Minimum OCR confidence percent to consider.
 postprocess_min_confidence = 1
