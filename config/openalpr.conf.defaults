@@ -3,8 +3,8 @@
 runtime_dir = ${CMAKE_INSTALL_PREFIX}/share/openalpr/runtime_data
 
 
-ocr_img_size_percent = 1.33333333
-state_id_img_size_percent = 2.0
+ocr_img_size_percent = 1.66666666
+state_id_img_size_percent = 2.5
 
 ; Calibrating your camera improves detection accuracy in cases where vehicle plates are captured at a steep angle
 ; Use the openalpr-utils-calibrate utility to calibrate your fixed camera to adjust for an angle
@@ -40,7 +40,7 @@ max_detection_input_height = 720
 ; lbpgpu    - LBP-based detector that uses Nvidia GPU to increase recognition speed.
 ; lbpopencl - LBP-based detector that uses OpenCL GPU to increase recognition speed.  Requires OpenCV 3.0
 ; morphcpu  - Experimental detector that detects white rectangles in an image.  Does not require training.
-detector = lbpgpu
+detector = lbpcpu
 
 ; If set to true, all results must match a postprocess text pattern if a pattern is available.  
 ; If not, the result is disqualified. 
@@ -60,7 +60,7 @@ analysis_count = 5
 
 ; OpenALPR detects high-contrast plate crops and uses an alternative edge detection technique.  Setting this to 0.0 
 ; would classify  ALL images as high-contrast, setting it to 1.0 would classify no images as high-contrast. 
-contrast_detection_threshold = 0.4
+contrast_detection_threshold = 0.1
 
 max_plate_angle_degrees = 30
 
