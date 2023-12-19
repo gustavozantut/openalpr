@@ -40,7 +40,7 @@ max_detection_input_height = 720
 ; lbpgpu    - LBP-based detector that uses Nvidia GPU to increase recognition speed.
 ; lbpopencl - LBP-based detector that uses OpenCL GPU to increase recognition speed.  Requires OpenCV 3.0
 ; morphcpu  - Experimental detector that detects white rectangles in an image.  Does not require training.
-detector = lbpcpu
+detector = lbpgpu
 
 ; If set to true, all results must match a postprocess text pattern if a pattern is available.  
 ; If not, the result is disqualified. 
