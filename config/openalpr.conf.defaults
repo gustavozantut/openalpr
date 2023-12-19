@@ -3,8 +3,8 @@
 runtime_dir = ${CMAKE_INSTALL_PREFIX}/share/openalpr/runtime_data
 
 
-ocr_img_size_percent = 1.66666666
-state_id_img_size_percent = 2.5
+ocr_img_size_percent = 1.33333333
+state_id_img_size_percent = 2.0
 
 ; Calibrating your camera improves detection accuracy in cases where vehicle plates are captured at a steep angle
 ; Use the openalpr-utils-calibrate utility to calibrate your fixed camera to adjust for an angle
@@ -21,7 +21,7 @@ max_plate_height_percent = 100
 ; It must be greater than 1.0.  A value of 1.01 means increase by 1%, 1.10 increases it by 10% each time. 
 ; So a 1% increase would be ~10x slower than 10% to process, but it has a higher chance of landing 
 ; directly on the plate and getting a strong detection
-detection_iteration_increase = 1.2
+detection_iteration_increase = 1.3
 
 ; The minimum detection strength determines how sure the detection algorithm must be before signaling that 
 ; a plate region exists.  Technically this corresponds to LBP nearest neighbors (e.g., how many detections 
@@ -56,7 +56,7 @@ detection_mask_image =
 
 ; OpenALPR can scan the same image multiple times with different randomization.  Setting this to a value larger than
 ; 1 may increase accuracy, but will increase processing time linearly (e.g., analysis_count = 3 is 3x slower)
-analysis_count = 5
+analysis_count = 10
 
 ; OpenALPR detects high-contrast plate crops and uses an alternative edge detection technique.  Setting this to 0.0 
 ; would classify  ALL images as high-contrast, setting it to 1.0 would classify no images as high-contrast. 
