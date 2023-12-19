@@ -1,4 +1,4 @@
-FROM python:3.11.3-slim
+FROM python:3.11.3
 
 # Install prerequisites
 RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y \
