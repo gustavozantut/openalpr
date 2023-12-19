@@ -47,7 +47,7 @@ detector = lbpcpu
 must_match_pattern = 1
 
 ; Bypasses plate detection.  If this is set to 1, the library assumes that each region provided is a likely plate area.
-skip_detection = 0
+skip_detection = 1
 
 ; Specifies the full path to an image file that constrains the detection area.  Only the plate regions allowed through the mask 
 ; will be analyzed.  The mask image must match the resolution of your image to be analyzed.  The mask is black and white.  
@@ -64,7 +64,7 @@ contrast_detection_threshold = 0.1
 
 max_plate_angle_degrees = 50
 
-ocr_min_font_point = 0.5
+ocr_min_font_point = 1
 
 ; Minimum OCR confidence percent to consider.
 postprocess_min_confidence = 1
