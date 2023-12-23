@@ -19,6 +19,12 @@ empty_cat_dict = {
         categories[2]: [],
         categories[3]: [],
     }
+flags_dict = {
+    categories[0]: "-c brg -p gn -j",
+    categories[1]: "-c brms -p ms -j",
+    categories[2]: "-c brmt -p gn -j",
+    categories[3]: "-c brmtms -p ms -j",
+}
 
 
 def clean_det_dir():
@@ -101,15 +107,6 @@ def create_dirs(category, latest_folder):
 
 
 def main():
-    
-    detect_dir = Path("/detect")
-    dest_dir = detect_dir / "old"
-    flags_dict = {
-        categories[0]: "-c brg -p gn -j",
-        categories[1]: "-c brms -p ms -j",
-        categories[2]: "-c brmt -p gn -j",
-        categories[3]: "-c brmtms -p ms -j",
-    }
 
     while not [
         item
@@ -156,5 +153,4 @@ def main():
 if __name__ == "__main__":
     
     clean_det_dir()
-    
     main()
