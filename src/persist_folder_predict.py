@@ -120,7 +120,7 @@ def main():
 
     for category in categories:
         
-        crops_dir_dict[category], sent_plates_file_dir_dict[category], sent_plates_log_file_dict[category], processed_plates_log_dir_dict[category] = create_dirs(category=category,latest_folder=latest_folder)
+        create_dirs(category=category,latest_folder=latest_folder)
 
     while True:
 
