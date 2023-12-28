@@ -25,6 +25,12 @@ flags_dict = {
     categories[3]: "-c brmtms -p ms -j",
 }
 
+crops_dir_dict = empty_cat_dict.copy()
+sent_plates_file_dir_dict = empty_cat_dict.copy()
+sent_plates_log_dir_dict = empty_cat_dict.copy()
+processed_plates_log_dir_dict = empty_cat_dict.copy()
+sent_plates_log_file_dict = empty_cat_dict.copy() 
+
 
 def clean_det_dir():
 
@@ -73,12 +79,6 @@ def get_latest_detection_folder_name(detect_dir=detect_dir, dest_dir=dest_dir):
     return latest_detection_folder_name
 
 def create_dirs(category, latest_folder):
-    
-    crops_dir_dict = empty_cat_dict.copy()
-    sent_plates_file_dir_dict = empty_cat_dict.copy()
-    sent_plates_log_dir_dict = empty_cat_dict.copy()
-    processed_plates_log_dir_dict = empty_cat_dict.copy()
-    sent_plates_log_file_dict = empty_cat_dict.copy() 
        
     crops_dir_dict[category] = detect_dir / \
         latest_folder / "crops" / category
@@ -120,7 +120,7 @@ def main():
 
     for category in categories:
         
-        crops_dir_dict, sent_plates_file_dir_dict, sent_plates_log_file_dict, processed_plates_log_dir_dict = create_dirs(category=category,latest_folder=latest_folder)
+        create_dirs(category=category,latest_folder=latest_folder)
 
     while True:
 

@@ -32,6 +32,7 @@ WORKDIR /srv/openalpr
 
 RUN pip install -r /srv/openalpr/requirements.txt
 RUN rm /srv/openalpr/requirements.txt
+RUN rm /srv/openalpr/Dockerfile
 
 # Setup the build directory
 RUN mkdir /srv/openalpr/src/build
