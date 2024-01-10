@@ -17,10 +17,10 @@ pattern = gn
 ;   stream = webcam
 
 ; Number of threads to analyze frames.
-analysis_threads = 10
+analysis_threads = 3
 
 ; topn is the number of possible plate character variations to report
-topn = 5
+topn = 3
 
 ; Determines whether images that contain plates should be stored to disk
 store_plates = 0
