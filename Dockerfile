@@ -26,13 +26,13 @@ RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get insta
 RUN apt-get update --fix-missing && DEBIAN_FRONTEND=noninteractive apt-get install -y wget
 
 # Copy all data
-RUN git clone https://github.com/gustavozantut/openalpr /srv/openalpr
+COPY . /srv/openalpr
 
 WORKDIR /srv/openalpr
 
 RUN pip install -r /srv/openalpr/requirements.txt
 RUN rm /srv/openalpr/requirements.txt
-RUN rm /srv/openalpr/Dockerfile
+
 
 # Setup the build directory
 RUN mkdir /srv/openalpr/src/build
@@ -45,4 +45,4 @@ RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc 
 
 WORKDIR /srv/openalpr/src
 
-ENTRYPOINT ["python", "persist_folder_predict.py"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002"]
