@@ -21,7 +21,7 @@ max_plate_height_percent = 100
 ; It must be greater than 1.0.  A value of 1.01 means increase by 1%, 1.10 increases it by 10% each time. 
 ; So a 1% increase would be ~10x slower than 10% to process, but it has a higher chance of landing 
 ; directly on the plate and getting a strong detection
-detection_iteration_increase = 2
+detection_iteration_increase = 1
 
 ; The minimum detection strength determines how sure the detection algorithm must be before signaling that 
 ; a plate region exists.  Technically this corresponds to LBP nearest neighbors (e.g., how many detections 
@@ -40,7 +40,7 @@ max_detection_input_height = 640
 ; lbpgpu    - LBP-based detector that uses Nvidia GPU to increase recognition speed.
 ; lbpopencl - LBP-based detector that uses OpenCL GPU to increase recognition speed.  Requires OpenCV 3.0
 ; morphcpu  - Experimental detector that detects white rectangles in an image.  Does not require training.
-detector = lbpcpu
+detector = lbpgpu
 
 ; If set to true, all results must match a postprocess text pattern if a pattern is available.  
 ; If not, the result is disqualified. 
@@ -56,7 +56,7 @@ detection_mask_image =
 
 ; OpenALPR can scan the same image multiple times with different randomization.  Setting this to a value larger than
 ; 1 may increase accuracy, but will increase processing time linearly (e.g., analysis_count = 3 is 3x slower)
-analysis_count = 15
+analysis_count = 150
 
 ; OpenALPR detects high-contrast plate crops and uses an alternative edge detection technique.  Setting this to 0.0 
 ; would classify  ALL images as high-contrast, setting it to 1.0 would classify no images as high-contrast. 
