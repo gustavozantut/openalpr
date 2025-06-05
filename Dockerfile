@@ -35,7 +35,7 @@ RUN rm /srv/openalpr/requirements.txt
 
 
 # Setup the build directory
-RUN mkdir /srv/openalpr/src/build
+RUN mkdir /srv/openalpr/src/build   
 WORKDIR /srv/openalpr/src/build
 
 # Setup the compile environment
@@ -45,4 +45,4 @@ RUN cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_SYSCONFDIR:PATH=/etc 
 
 WORKDIR /srv/openalpr/src
 
-CMD ["gunicorn", "main:app", "--workers", "4", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8002"]
+CMD ["gunicorn", "main:app", "--workers", "1", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8002"]
